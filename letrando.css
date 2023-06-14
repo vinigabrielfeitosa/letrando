@@ -296,4 +296,11 @@ header {
     .tela-container{
         width: 80%;
     }
+     .linha-teclado{
+        width: 380px;
+    }
+    .bloco-tecla{
+        width: 34px;
+        height: 60px;
+    }
 }

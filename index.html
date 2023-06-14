@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letrando</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="letrando.css">
+</head>
+
+<body class="modo-escuro">
+  <header>
+    <div class="container">
+      <div class="containerinicio">
+        <button class="botoes">
+          <i class="fa fa-home"></i>
+        </button>
+        <button class="botoes" id="botao-reiniciar">
+          <i class="fa fa-undo"></i>
+        </button>
+      </div>
+      <h1 id="titulo">Letrando</h1>
+      <div class="containerfim">
+        <button class="botoes" id="ajuda">
+          <i class="fa fa-question" aria-hidden="true"></i>
+        </button>
+        <button class="botoes" id="modo">
+          <i class="fa fa-lightbulb-o"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <br><br>
+  <div id="tela" class="tela">
+    <div class="tela-container">
+      <h2>COMO JOGAR</h2>
+      <p>Adivinhe a palavra em 6 tentativas.</p>
+      <p>Cada tentativa deve ser uma palavra valida com 5 letras.</p><br>
+      <hr>
+      <h2>DICA</h2>
+      <p>A cor da letra mostra o quão perto voce esta da palavra.</p>
+      <p><strong style="color: #6AAA64;">VERDE:</strong> ela está presente na palavra e na posição correta.</p>
+      <p><strong style="color: #d3ad69;">AMARELA:</strong> ela está presente na palavra, mas na posição errada.</p>
+      <p><strong style="color: #943e3c;">VERMELHA:</strong> ela não está na palavra.</p>
+      <button id="fechar">Fechar</button>
+    </div>
+  </div>
+  <h1 id="resposta" class="resposta-banner"></h1>
+  <br>
+  <div id="tabuleiro">
+  </div>
+
+  <br>
+
+</body>
+
+<script>
+  var ajudaBtn = document.getElementById("ajuda");
+  var tela = document.getElementById("tela");
+  var fecharBtn = document.getElementById("fechar");
+
+  ajudaBtn.addEventListener("click", function () {
+    tela.style.display = "block";
+  });
+
+  fecharBtn.addEventListener("click", function () {
+    tela.style.display = "none";
+  });
+
+var botao = document.getElementById("modo")
+botao.addEventListener("click", alternarModo);
+
+function alternarModo() {
+  var body = document.querySelector("body");
+  body.classList.toggle("modo-escuro");
+  body.classList.toggle("modo-claro");
+  console.log("teste");
+}
+
+const botaoReiniciar = document.getElementById("botao-reiniciar")
+
+botaoReiniciar.addEventListener("click", function() {
+  // Reinicia a página
+  location.reload();
+});
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="letrando.js"></script>
+
+</html>

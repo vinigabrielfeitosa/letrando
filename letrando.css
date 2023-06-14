@@ -1,0 +1,299 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.modo-claro {
+    background-color: #f4f3f1;
+    color: #000000;
+}
+
+.modo-escuro {
+    background-color: #121213;
+    color: #ffffff;
+}
+
+body.modo-claro .bloco,
+body.modo-claro #titulo,
+body.modo-claro .resposta-banner,
+body.modo-claro .tela-container{
+    color: #121212;
+}
+
+body.modo-claro .correto,
+body.modo-claro .presente,
+body.modo-claro .ausente {
+  color: white;
+  border-color: black;
+}
+
+body.modo-claro .tela-container{
+    background-color: #f4f3f1;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 0px 20px;
+    height: 65px;
+    color: #fff;
+    border-bottom: 1px solid #3a3a3c;
+}
+
+.logo {
+    color: azure;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+#titulo {
+    font-family: "Berlin Sans FB", "Bauhaus 93";
+    font-size: 2.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#tabuleiro {
+    width: 350px;
+    height: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tela {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tela-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#fechar{
+    border: 1px solid #121212;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    line-height: inherit;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.botoes {
+    z-index: 1000;
+    cursor: pointer;
+    padding: 0;
+    width: 5vh;
+    height: 6vh;
+    background-color: transparent;
+    border: none;
+    color: #565983;
+    font-weight: 400;
+    line-height: 1em;
+    font-size: 2vh;
+    font-family: 'Mitr', sans-serif;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes div, .botoes i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #B7AEB4;
+    border-radius: 20%;
+    width: 4.5vh;
+    height: 4.5vh;
+    margin: 0 0.25vh;
+    transition: transform 0.5s ease-in-out;
+}
+
+.containerfim{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.containerinicio{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resposta-banner {
+    font-size: 1.3em;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bloco {
+    /* Box */
+    border: 2px solid rgb(145, 145, 145);
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+
+    /* Text */
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.correto {
+    background-color: #6AAA64;
+    color: white;
+    border-color: white;
+}
+
+.presente {
+    background-color: #d3ad69;
+    color: white;
+    border-color: white;
+}
+
+.ausente {
+    background-color: #943e3c;
+    color: white;
+    border-color: white;
+}
+
+.botoes i{
+    font-size: 24px;
+}
+
+.linha-teclado {
+    width: 400px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.linha-meio {
+    justify-content: center;
+}
+
+.bloco-tecla {
+    width: 36px;
+    height: 60px;
+    margin: 1px;
+    border-radius: 8%;
+    border: 1px solid #3a3a3c;
+    cursor: pointer;
+    /* Text */
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Mitr', sans-serif;
+}
+
+.tecla-enter {
+    width: 70px;
+    height: 60px;
+    margin: 1px;
+    border-radius: 8%;
+    border: 1px solid #3a3a3c;
+    cursor: pointer;
+    /* Text */
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Mitr', sans-serif;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-20px);
+    }
+
+    75% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.bloquear {
+    animation: shake 0.2s ease-in-out;
+}
+
+@media (max-width: 858px) {
+    .resposta-banner {
+        top: 8.5%;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 680px) {
+    .container{
+        justify-content: space-between;
+    }
+
+    .botoes{
+        width: 4.2vh;
+        height: 4vh;
+        font-size: 1vh;
+    }
+
+    .containerinicio{
+        gap: 5px;
+    }
+
+    #titulo{
+        font-size: 30px;
+        text-align: center;
+    }
+    .tela-container{
+        width: 80%;
+    }
+}
